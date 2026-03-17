@@ -20,19 +20,6 @@ body {
     padding: 0 20px;
 }
 
-/* 图片标注样式 - 紫色文字 */
-.img-note {
-    color: #8a2be2 !important; /* 紫色 */
-    font-weight: bold;
-    font-size: 0.9rem;
-    display: block;
-    padding: 5px;
-    border: 1px dashed #8a2be2;
-    background-color: #f8f0ff;
-    margin: 5px 0;
-    text-align: center;
-}
-
 /* 标题字体 */
 h1, h2, h3, h4, .logo {
     font-family: 'Noto Serif SC', serif;
@@ -92,6 +79,36 @@ h1, h2, h3, h4, .logo {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* 图片标注样式 */
+.img-note {
+    color: #8a2be2;
+    font-weight: bold;
+    background: #f8f0ff;
+    padding: 8px;
+    border: 2px dashed #8a2be2;
+    margin: 10px 0;
+    display: block;
+    text-align: center;
+}
+
+/* ===== 面包屑导航 ===== */
+.breadcrumb {
+    background: #f8f9fa;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    color: #666;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.breadcrumb a {
+    color: #c19a6b;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
 }
 
 /* ===== 导航栏 ===== */
@@ -221,6 +238,28 @@ h1, h2, h3, h4, .logo {
     display: inline-block;
 }
 
+.value-props {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.value-props p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.value-props i {
+    color: #f1c40f;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
 /* ===== 信任栏 ===== */
 .trust-bar {
     background-color: #2c3e50;
@@ -252,7 +291,64 @@ h1, h2, h3, h4, .logo {
     opacity: 0.9;
 }
 
-/* ===== 服务/工艺卡片 ===== */
+/* ===== 对比表格 ===== */
+.comparison-table {
+    display: table;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 60px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-header, .table-cell {
+    display: table-cell;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eef2f7;
+    vertical-align: middle;
+}
+
+.table-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 20px 15px;
+}
+
+.table-row:nth-child(even) .table-cell {
+    background-color: #fafbfc;
+}
+
+.table-row:hover .table-cell {
+    background-color: #f0f7ff;
+}
+
+.table-row:first-child .table-header:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table-row:first-child .table-header:last-child {
+    border-top-right-radius: 10px;
+}
+
+.table-row:last-child .table-cell:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.table-row:last-child .table-cell:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* ===== 服务卡片 ===== */
 .service-cards {
     display: flex;
     flex-direction: column;
@@ -328,6 +424,15 @@ h1, h2, h3, h4, .logo {
     flex-shrink: 0;
 }
 
+.price-info {
+    background: #f8f9fa;
+    border-left: 4px solid #c19a6b;
+    padding: 15px 20px;
+    margin-top: 25px;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+}
+
 /* ===== 案例展示 ===== */
 .case-gallery {
     display: grid;
@@ -373,7 +478,7 @@ h1, h2, h3, h4, .logo {
     color: #666;
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .case-tag {
@@ -384,9 +489,10 @@ h1, h2, h3, h4, .logo {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
+    margin-top: 10px;
 }
 
-/* ===== 流程步骤 ===== */
+/* ===== 修复流程 ===== */
 .process-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -401,6 +507,11 @@ h1, h2, h3, h4, .logo {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     position: relative;
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
 }
 
 .step-number {
@@ -435,6 +546,75 @@ h1, h2, h3, h4, .logo {
 .step p {
     color: #666;
     line-height: 1.6;
+}
+
+/* ===== FAQ部分 ===== */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #c19a6b;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f0f7ff;
+}
+
+.faq-question i {
+    color: #c19a6b;
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px 25px;
+    max-height: 1000px;
+}
+
+.faq-answer p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.faq-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border-left: 4px solid #c19a6b;
+}
+
+.faq-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 /* ===== 页脚 ===== */
@@ -542,8 +722,15 @@ h1, h2, h3, h4, .logo {
     line-height: 1.6;
 }
 
-.footer-bottom p:first-child {
-    margin-bottom: 10px;
+.geo-note {
+    font-style: italic;
+    margin-top: 10px;
+    color: #95a5a6;
+}
+
+.geo-note i {
+    margin-right: 8px;
+    color: #c19a6b;
 }
 
 /* ===== 浮动按钮 ===== */
@@ -641,318 +828,20 @@ h1, h2, h3, h4, .logo {
         grid-template-columns: 1fr;
     }
     
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .comparison-table .table-row {
+        min-width: 600px;
+    }
+    
     .float-btn {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
-        font-size: 1.5rem;
-    }
-}
-/* ==================== 左右对比布局样式 ==================== */
-.comparison-container-vertical {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    max-width: 1200px;
-    margin: 50px auto;
-    position: relative;
-}
-
-/* 中间分隔线 */
-.comparison-divider {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 2px;
-    height: 80%;
-    background: linear-gradient(to bottom, #e74c3c, #c0392b);
-    z-index: 1;
-}
-
-.comparison-divider::after {
-    content: 'VS';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    color: #e74c3c;
-    font-weight: bold;
-    font-size: 14px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #e74c3c;
-    z-index: 2;
-}
-
-/* 左右两列 */
-.comparison-column {
-    flex: 1;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    margin: 0 15px;
-}
-
-/* 左侧列样式 - 橙色系 */
-.comparison-left {
-    border-top: 4px solid #f39c12;
-}
-
-/* 右侧列样式 - 绿色系 */
-.comparison-right {
-    border-top: 4px solid #27ae60;
-}
-
-/* 列标题 */
-.column-header {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.process-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-size: 1.8rem;
-}
-
-.comparison-left .process-icon {
-    background: #fff9e6;
-    color: #f39c12;
-    border: 2px solid #f39c12;
-}
-
-.comparison-right .process-icon {
-    background: #e8f6f3;
-    color: #27ae60;
-    border: 2px solid #27ae60;
-}
-
-.column-header h3 {
-    font-size: 1.6rem;
-    color: #2c3e50;
-    margin-bottom: 8px;
-}
-
-.column-subtitle {
-    color: #7f8c8d;
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* 对比项目 */
-.comparison-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 8px;
-}
-
-.comparison-item h4 {
-    font-size: 1.1rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-/* 功能列表 */
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.feature-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.feature-list li i {
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
-.comparison-left .feature-list li i {
-    color: #f39c12;
-}
-
-.comparison-right .feature-list li i {
-    color: #27ae60;
-}
-
-/* 价格显示 */
-.price-display {
-    text-align: center;
-}
-
-.price-number {
-    font-size: 1.8rem;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.comparison-left .price-number {
-    color: #f39c12;
-}
-
-.comparison-right .price-number {
-    color: #27ae60;
-}
-
-.price-note {
-    font-size: 0.85rem;
-    color: #7f8c8d;
-    display: block;
-}
-
-/* 时间显示 */
-.time-display {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 1rem;
-    color: #2c3e50;
-}
-
-.time-display i {
-    color: #3498db;
-}
-
-/* 效果标签 */
-.effect-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-}
-
-.effect-tag {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-}
-
-.gold-tag {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
-}
-
-.invisible-tag {
-    background-color: #d1f2eb;
-    color: #0e6251;
-    border: 1px solid #a3e4d7;
-}
-
-/* 质保显示 */
-.warranty-display {
-    text-align: center;
-}
-
-.warranty-display i {
-    font-size: 1.3rem;
-    color: #e74c3c;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.warranty-text {
-    font-size: 1.2rem;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.comparison-left .warranty-text {
-    color: #f39c12;
-}
-
-.comparison-right .warranty-text {
-    color: #27ae60;
-}
-
-.warranty-note {
-    font-size: 0.85rem;
-    color: #7f8c8d;
-    display: block;
-}
-
-/* 推荐指数 */
-.rating-display {
-    text-align: center;
-}
-
-.stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 8px;
-}
-
-.stars i {
-    color: #f1c40f;
-    font-size: 1.1rem;
-}
-
-.rating-text {
-    font-size: 0.95rem;
-    color: #7f8c8d;
-    font-weight: 500;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.recommend-for {
-    font-size: 0.85rem;
-    color: #2c3e50;
-    margin: 0;
-    padding: 8px 12px;
-    background: #f8f9fa;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-/* 响应式设计 */
-@media (max-width: 992px) {
-    .comparison-container-vertical {
-        flex-direction: column;
-        max-width: 600px;
-    }
-    
-    .comparison-divider {
-        display: none;
-    }
-    
-    .comparison-column {
-        margin: 10px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .comparison-column {
-        padding: 20px;
-        margin: 10px 0;
-    }
-    
-    .price-number {
         font-size: 1.5rem;
     }
 }

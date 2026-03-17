@@ -654,40 +654,21 @@ h1, h2, h3, h4, .logo {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 50px auto;
     position: relative;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    border: 1px solid #eaeaea;
 }
 
-/* 中间红色分隔线 */
+/* 中间分隔线 */
 .comparison-divider {
     position: absolute;
     left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, #e74c3c, #c0392b);
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-/* 中间分隔线的装饰 */
-.comparison-divider::before {
-    content: '';
-    position: absolute;
     top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    background: #e74c3c;
-    border-radius: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
+    width: 2px;
+    height: 80%;
+    background: linear-gradient(to bottom, #e74c3c, #c0392b);
+    z-index: 1;
 }
 
 .comparison-divider::after {
@@ -699,116 +680,91 @@ h1, h2, h3, h4, .logo {
     background: white;
     color: #e74c3c;
     font-weight: bold;
-    font-size: 12px;
-    width: 30px;
-    height: 30px;
+    font-size: 14px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
     border: 2px solid #e74c3c;
+    z-index: 2;
 }
 
 /* 左右两列 */
 .comparison-column {
     flex: 1;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 15px;
 }
 
-/* 左侧列样式 */
+/* 左侧列样式 - 橙色系 */
 .comparison-left {
-    border-right: 1px solid #eaeaea;
+    border-top: 4px solid #f39c12;
 }
 
-/* 右侧列样式 */
+/* 右侧列样式 - 绿色系 */
 .comparison-right {
-    border-left: 1px solid #eaeaea;
+    border-top: 4px solid #27ae60;
 }
 
 /* 列标题 */
 .column-header {
-    margin-bottom: 40px;
-    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .process-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 2rem;
+    margin: 0 auto 15px;
+    font-size: 1.8rem;
 }
 
 .comparison-left .process-icon {
-    background: linear-gradient(135deg, #fff9e6 0%, #f7efd2 100%);
+    background: #fff9e6;
     color: #f39c12;
-    border: 3px solid #f39c12;
+    border: 2px solid #f39c12;
 }
 
 .comparison-right .process-icon {
-    background: linear-gradient(135deg, #e8f6f3 0%, #d1f2eb 100%);
+    background: #e8f6f3;
     color: #27ae60;
-    border: 3px solid #27ae60;
+    border: 2px solid #27ae60;
 }
 
 .column-header h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .column-subtitle {
     color: #7f8c8d;
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin: 0;
 }
 
 /* 对比项目 */
 .comparison-item {
-    width: 100%;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
     background: #f8f9fa;
-    transition: all 0.3s ease;
-}
-
-.comparison-item:hover {
-    background: #f0f7ff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
 .comparison-item h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #2c3e50;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-weight: 600;
-    border-bottom: 2px solid #eaeaea;
-    padding-bottom: 8px;
-}
-
-/* 高亮项目（价格和质保） */
-.highlight-item {
-    background: #fff !important;
-    border: 2px solid #eaeaea;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.comparison-left .highlight-item {
-    border-top: 3px solid #f39c12;
-}
-
-.comparison-right .highlight-item {
-    border-top: 3px solid #27ae60;
 }
 
 /* 功能列表 */
@@ -821,17 +777,13 @@ h1, h2, h3, h4, .logo {
 .feature-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    font-size: 1rem;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
     color: #555;
-    text-align: left;
-    padding: 0 20px;
 }
 
 .feature-list li i {
-    margin-right: 10px;
-    color: #27ae60;
+    margin-right: 8px;
     flex-shrink: 0;
 }
 
@@ -839,16 +791,19 @@ h1, h2, h3, h4, .logo {
     color: #f39c12;
 }
 
+.comparison-right .feature-list li i {
+    color: #27ae60;
+}
+
 /* 价格显示 */
 .price-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .price-number {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
+    display: block;
     margin-bottom: 5px;
 }
 
@@ -861,9 +816,9 @@ h1, h2, h3, h4, .logo {
 }
 
 .price-note {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #7f8c8d;
-    max-width: 200px;
+    display: block;
 }
 
 /* 时间显示 */
@@ -871,8 +826,8 @@ h1, h2, h3, h4, .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    font-size: 1.1rem;
+    gap: 8px;
+    font-size: 1rem;
     color: #2c3e50;
 }
 
@@ -884,14 +839,14 @@ h1, h2, h3, h4, .logo {
 .effect-tags {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
-    gap: 10px;
 }
 
 .effect-tag {
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
 }
 
@@ -909,20 +864,21 @@ h1, h2, h3, h4, .logo {
 
 /* 质保显示 */
 .warranty-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    text-align: center;
 }
 
 .warranty-display i {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #e74c3c;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .warranty-text {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .comparison-left .warranty-text {
@@ -934,89 +890,44 @@ h1, h2, h3, h4, .logo {
 }
 
 .warranty-note {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #7f8c8d;
-    max-width: 200px;
+    display: block;
 }
 
 /* 推荐指数 */
 .rating-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    text-align: center;
 }
 
 .stars {
     display: flex;
+    justify-content: center;
     gap: 5px;
+    margin-bottom: 8px;
 }
 
 .stars i {
     color: #f1c40f;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .rating-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #7f8c8d;
     font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .recommend-for {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #2c3e50;
     margin: 0;
-    padding: 8px 15px;
+    padding: 8px 12px;
     background: #f8f9fa;
     border-radius: 20px;
-    max-width: 250px;
-}
-
-/* 选择建议 */
-.selection-tips {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.tip-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 25px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 10px;
-    border-left: 4px solid #3498db;
-}
-
-.tip-icon {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #3498db;
-    flex-shrink: 0;
-}
-
-.tip-content h4 {
-    margin: 0 0 10px 0;
-    color: #2c3e50;
-    font-size: 1.2rem;
-}
-
-.tip-content p {
-    margin: 0;
-    color: #555;
-    line-height: 1.6;
+    display: inline-block;
 }
 
 /* 响应式设计 */
@@ -1030,78 +941,18 @@ h1, h2, h3, h4, .logo {
         display: none;
     }
     
-    .comparison-left,
-    .comparison-right {
-        border: none;
-        border-bottom: 1px solid #eaeaea;
-        padding: 30px 20px;
-    }
-    
-    .comparison-right {
-        border-bottom: none;
+    .comparison-column {
+        margin: 10px 0;
     }
 }
 
 @media (max-width: 768px) {
-    .comparison-container-vertical {
-        margin: 30px auto;
-        border-radius: 10px;
-    }
-    
     .comparison-column {
-        padding: 30px 20px;
-    }
-    
-    .process-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .column-header h3 {
-        font-size: 1.5rem;
-    }
-    
-    .comparison-item {
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 20px;
+        margin: 10px 0;
     }
     
     .price-number {
         font-size: 1.5rem;
-    }
-    
-    .selection-tips {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .comparison-container-vertical {
-        margin: 20px -15px;
-        border-radius: 0;
-        box-shadow: none;
-        border: none;
-    }
-    
-    .comparison-column {
-        padding: 25px 15px;
-    }
-    
-    .feature-list li {
-        padding: 0 10px;
-        font-size: 0.9rem;
-    }
-    
-    .effect-tag {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-    
-    .tip-box {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
     }
 }

@@ -649,139 +649,459 @@ h1, h2, h3, h4, .logo {
         font-size: 1.5rem;
     }
 }
-/* ==================== 对比表格样式 ==================== */
-.comparison-container {
-    margin: 40px auto 60px;
-    max-width: 900px;
-}
-
-.process-comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    border-radius: 10px;
+/* ==================== 左右对比布局样式 ==================== */
+.comparison-container-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 50px auto;
+    position: relative;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    border: 1px solid #eaeaea;
+}
+
+/* 中间红色分隔线 */
+.comparison-divider {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #e74c3c, #c0392b);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* 中间分隔线的装饰 */
+.comparison-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #e74c3c;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.comparison-divider::after {
+    content: 'VS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: white;
-}
-
-.process-comparison-table th,
-.process-comparison-table td {
-    padding: 18px 20px;
-    text-align: center;
-    border-bottom: 1px solid #eef2f7;
-}
-
-.process-comparison-table thead {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-}
-
-.table-header {
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 20px 15px !important;
-}
-
-.row-header {
-    background-color: #f8f9fa;
-    color: #2c3e50;
-    font-weight: 600;
-    text-align: left;
-    width: 25%;
-    padding-left: 30px !important;
-    border-right: 2px solid #eef2f7;
-}
-
-.process-comparison-table tbody tr:nth-child(even) {
-    background-color: #fafbfc;
-}
-
-.process-comparison-table tbody tr:hover {
-    background-color: #f0f7ff;
-}
-
-.process-comparison-table td {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.process-comparison-table .price-cell {
-    font-weight: 700;
     color: #e74c3c;
-    font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    border: 2px solid #e74c3c;
 }
 
-.process-comparison-table .cell-highlight {
-    background-color: #f8f9fa;
+/* 左右两列 */
+.comparison-column {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 左侧列样式 */
+.comparison-left {
+    border-right: 1px solid #eaeaea;
+}
+
+/* 右侧列样式 */
+.comparison-right {
+    border-left: 1px solid #eaeaea;
+}
+
+/* 列标题 */
+.column-header {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.process-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+}
+
+.comparison-left .process-icon {
+    background: linear-gradient(135deg, #fff9e6 0%, #f7efd2 100%);
+    color: #f39c12;
+    border: 3px solid #f39c12;
+}
+
+.comparison-right .process-icon {
+    background: linear-gradient(135deg, #e8f6f3 0%, #d1f2eb 100%);
+    color: #27ae60;
+    border: 3px solid #27ae60;
+}
+
+.column-header h3 {
+    font-size: 1.8rem;
     color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.column-subtitle {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 对比项目 */
+.comparison-item {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.comparison-item:hover {
+    background: #f0f7ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-item h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 8px;
+}
+
+/* 高亮项目（价格和质保） */
+.highlight-item {
+    background: #fff !important;
+    border: 2px solid #eaeaea;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-left .highlight-item {
+    border-top: 3px solid #f39c12;
+}
+
+.comparison-right .highlight-item {
+    border-top: 3px solid #27ae60;
+}
+
+/* 功能列表 */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.feature-list li i {
+    margin-right: 10px;
+    color: #27ae60;
+    flex-shrink: 0;
+}
+
+.comparison-left .feature-list li i {
+    color: #f39c12;
+}
+
+/* 价格显示 */
+.price-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.comparison-left .price-number {
+    color: #f39c12;
+}
+
+.comparison-right .price-number {
+    color: #27ae60;
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    max-width: 200px;
+}
+
+/* 时间显示 */
+.time-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.time-display i {
+    color: #3498db;
+}
+
+/* 效果标签 */
+.effect-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.effect-tag {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
-.process-comparison-table .highlight-cell {
-    background-color: #e8f6f3;
-    color: #27ae60;
+.gold-tag {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.invisible-tag {
+    background-color: #d1f2eb;
+    color: #0e6251;
+    border: 1px solid #a3e4d7;
+}
+
+/* 质保显示 */
+.warranty-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.warranty-display i {
+    font-size: 1.5rem;
+    color: #e74c3c;
+}
+
+.warranty-text {
+    font-size: 1.3rem;
     font-weight: 700;
-    position: relative;
 }
 
-.process-comparison-table .highlight-cell::after {
-    content: "✓ 推荐";
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 0.7rem;
-    background: #27ae60;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 10px;
-}
-
-.comparison-note {
-    background-color: #fff9e6;
-    border-left: 4px solid #f39c12;
-    padding: 15px 20px;
-    margin-top: 25px;
-    border-radius: 0 5px 5px 0;
-    font-size: 0.95rem;
-}
-
-.comparison-note i {
+.comparison-left .warranty-text {
     color: #f39c12;
-    margin-right: 10px;
+}
+
+.comparison-right .warranty-text {
+    color: #27ae60;
+}
+
+.warranty-note {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    max-width: 200px;
+}
+
+/* 推荐指数 */
+.rating-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars i {
+    color: #f1c40f;
+    font-size: 1.2rem;
+}
+
+.rating-text {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.recommend-for {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    margin: 0;
+    padding: 8px 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+    max-width: 250px;
+}
+
+/* 选择建议 */
+.selection-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tip-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.tip-icon {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #3498db;
+    flex-shrink: 0;
+}
+
+.tip-content h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.tip-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* 响应式设计 */
+@media (max-width: 992px) {
+    .comparison-container-vertical {
+        flex-direction: column;
+        max-width: 600px;
+    }
+    
+    .comparison-divider {
+        display: none;
+    }
+    
+    .comparison-left,
+    .comparison-right {
+        border: none;
+        border-bottom: 1px solid #eaeaea;
+        padding: 30px 20px;
+    }
+    
+    .comparison-right {
+        border-bottom: none;
+    }
+}
+
 @media (max-width: 768px) {
-    .process-comparison-table {
-        font-size: 0.9rem;
+    .comparison-container-vertical {
+        margin: 30px auto;
+        border-radius: 10px;
     }
     
-    .process-comparison-table th,
-    .process-comparison-table td {
-        padding: 12px 10px;
+    .comparison-column {
+        padding: 30px 20px;
     }
     
-    .row-header {
-        padding-left: 15px !important;
-        width: 30%;
+    .process-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
     
-    .process-comparison-table .highlight-cell::after {
-        font-size: 0.6rem;
-        padding: 1px 6px;
+    .column-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .comparison-item {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .price-number {
+        font-size: 1.5rem;
+    }
+    
+    .selection-tips {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .process-comparison-table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+    .comparison-container-vertical {
+        margin: 20px -15px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
     }
     
-    .process-comparison-table table {
-        min-width: 500px;
+    .comparison-column {
+        padding: 25px 15px;
+    }
+    
+    .feature-list li {
+        padding: 0 10px;
+        font-size: 0.9rem;
+    }
+    
+    .effect-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .tip-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 }

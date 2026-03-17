@@ -639,5 +639,40 @@
             });
         });
     </script>
+
+    <script>
+// FAQ折叠交互功能
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    // 为每个FAQ项添加点击事件
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // 关闭所有其他FAQ
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // 切换当前FAQ
+            if (!isActive) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    });
+    
+    // 默认展开第一个FAQ
+    if (faqItems.length > 0) {
+        faqItems[0].classList.add('active');
+    }
+});
+</script>
 </body>
 </html>

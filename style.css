@@ -927,3 +927,39 @@ h1, h2, h3, h4, .logo {
         font-size: 1.5rem;
     }
 }
+
+/* FAQ终极修复 - 强制完整显示 */
+.faq-answer {
+    display: none;
+    padding: 0 30px;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    padding: 0 30px 30px 30px;
+    opacity: 1;
+    height: auto;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* 移除所有可能隐藏内容的样式 */
+.faq-answer p,
+.faq-answer div,
+.faq-answer span {
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    -webkit-box-orient: unset !important;
+}

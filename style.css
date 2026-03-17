@@ -767,6 +767,33 @@ h1, h2, h3, h4, .logo {
         gap: 40px;
     }
 }
+@media (max-width: 768px) {
+    /* 已有的其他样式... */
+    
+    /* 页脚响应式 */
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-qr {
+        order: -1;
+        max-width: 280px;
+        margin: 0 auto 20px;
+    }
+    
+    .footer-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+}
 
 @media (max-width: 768px) {
     .header .container {

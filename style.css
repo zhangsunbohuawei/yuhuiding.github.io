@@ -845,8 +845,8 @@ h1, h2, h3, h4, .logo {
 /* ==================== 浮动按钮 ==================== */
 .float-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 10px;
+    right: 10px;
     background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
     color: white;
     width: 60px;

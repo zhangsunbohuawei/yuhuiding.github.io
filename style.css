@@ -911,3 +911,62 @@ h1, h2, h3, h4, .logo {
     display: none; /* 不显示箭头 */
 }
 }
+<style>
+/* FAQ强制显示修复 - 最高优先级 */
+.faq-answer {
+    all: unset !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 25px 30px !important;
+    margin: 0 !important;
+    border: none !important;
+    background: white !important;
+    color: #555 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.8 !important;
+    position: static !important;
+    transform: none !important;
+    transition: none !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    text-overflow: clip !important;
+    box-sizing: border-box !important;
+}
+
+.faq-answer p {
+    all: unset !important;
+    display: block !important;
+    margin: 0 0 15px 0 !important;
+    padding: 0 !important;
+    line-height: 1.8 !important;
+    color: #555 !important;
+    font-size: 1.1rem !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.faq-answer strong {
+    color: #2c3e50 !important;
+    font-weight: 600 !important;
+}
+
+/* 确保容器不限制内容 */
+.faq-item {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+}
+
+.faq-container {
+    overflow: visible !important;
+}
+</style>

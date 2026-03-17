@@ -928,38 +928,157 @@ h1, h2, h3, h4, .logo {
     }
 }
 
-/* FAQ终极修复 - 强制完整显示 */
+/* ==================== FAQ部分 - 修复完整显示 ==================== */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #c19a6b;
+}
+
+.faq-question {
+    padding: 25px 30px;
+    margin: 0;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: #f0f7ff;
+}
+
+.faq-question i {
+    color: #c19a6b;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* 展开/收起箭头 */
+.faq-question::after {
+    content: '▼';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #c19a6b;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* 答案部分 - 初始隐藏 */
 .faq-answer {
-    display: none;
     padding: 0 30px;
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
+    visibility: hidden;
     transition: all 0.5s ease;
+    line-height: 1.8;
+    color: #444;
+    background: white;
 }
 
+/* 激活状态 */
 .faq-item.active .faq-answer {
-    display: block;
     padding: 0 30px 30px 30px;
+    max-height: 1000px; /* 足够大的值容纳内容 */
     opacity: 1;
-    height: auto;
-    max-height: none !important;
-    overflow: visible !important;
+    visibility: visible;
+    display: block;
+    overflow: visible;
 }
 
-/* 移除所有可能隐藏内容的样式 */
-.faq-answer p,
-.faq-answer div,
-.faq-answer span {
-    display: block !important;
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
-    text-overflow: clip !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    -webkit-line-clamp: unset !important;
-    line-clamp: unset !important;
-    -webkit-box-orient: unset !important;
+.faq-answer p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    text-overflow: clip;
+    overflow: visible;
+    max-height: none;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer strong {
+    color: #c19a6b;
+    font-weight: 600;
+}
+
+/* FAQ底部的行动号召 */
+.faq-cta {
+    text-align: center;
+    margin-top: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    border-left: 5px solid #c19a6b;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.faq-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.faq-cta .btn-primary {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+}
+
+/* 响应式设计 - FAQ部分 */
+@media (max-width: 768px) {
+    .faq-question {
+        padding: 20px 15px;
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 15px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 15px 20px 15px;
+    }
+    
+    .faq-cta {
+        padding: 30px 20px;
+    }
+    
+    .faq-cta p {
+        font-size: 1.1rem;
+    }
 }

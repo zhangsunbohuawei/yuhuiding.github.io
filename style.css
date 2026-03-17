@@ -296,7 +296,7 @@ h1, h2, h3, h4, .logo {
 .company-intro {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 500px;
     margin-top: 40px;
 }
 

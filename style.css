@@ -1,4 +1,4 @@
-/* 基础重置与字体 */
+/* ==================== 基础样式 ==================== */
 * {
     margin: 0;
     padding: 0;
@@ -81,7 +81,7 @@ h1, h2, h3, h4, .logo {
     margin-right: auto;
 }
 
-/* 图片标注样式 */
+/* 图片标注样式 - 紫色文字方便替换 */
 .img-note {
     color: #8a2be2;
     font-weight: bold;
@@ -91,9 +91,10 @@ h1, h2, h3, h4, .logo {
     margin: 10px 0;
     display: block;
     text-align: center;
+    font-size: 0.9rem;
 }
 
-/* ===== 面包屑导航 ===== */
+/* ==================== 面包屑导航 ==================== */
 .breadcrumb {
     background: #f8f9fa;
     padding: 15px 0;
@@ -111,7 +112,7 @@ h1, h2, h3, h4, .logo {
     text-decoration: underline;
 }
 
-/* ===== 导航栏 ===== */
+/* ==================== 导航栏 ==================== */
 .header {
     background-color: rgba(255, 255, 255, 0.98);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -192,7 +193,7 @@ h1, h2, h3, h4, .logo {
     font-weight: 600;
 }
 
-/* ===== 主横幅 ===== */
+/* ==================== 主横幅 ==================== */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
     color: white;
@@ -260,7 +261,7 @@ h1, h2, h3, h4, .logo {
     flex-shrink: 0;
 }
 
-/* ===== 信任栏 ===== */
+/* ==================== 信任栏 ==================== */
 .trust-bar {
     background-color: #2c3e50;
     color: white;
@@ -291,7 +292,7 @@ h1, h2, h3, h4, .logo {
     opacity: 0.9;
 }
 
-/* ===== 对比表格 ===== */
+/* ==================== 对比表格 ==================== */
 .comparison-table {
     display: table;
     width: 100%;
@@ -348,7 +349,7 @@ h1, h2, h3, h4, .logo {
     border-bottom-right-radius: 10px;
 }
 
-/* ===== 服务卡片 ===== */
+/* ==================== 服务卡片 ==================== */
 .service-cards {
     display: flex;
     flex-direction: column;
@@ -433,7 +434,7 @@ h1, h2, h3, h4, .logo {
     font-size: 1rem;
 }
 
-/* ===== 案例展示 ===== */
+/* ==================== 案例展示 ==================== */
 .case-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -492,7 +493,7 @@ h1, h2, h3, h4, .logo {
     margin-top: 10px;
 }
 
-/* ===== 修复流程 ===== */
+/* ==================== 修复流程 ==================== */
 .process-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -548,76 +549,112 @@ h1, h2, h3, h4, .logo {
     line-height: 1.6;
 }
 
-/* ===== FAQ部分 ===== */
+/* ==================== FAQ部分 ==================== */
 .faq-container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
 }
 
 .faq-item {
     background: white;
     border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s ease;
+    overflow: visible;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #c19a6b;
 }
 
 .faq-question {
-    padding: 20px 25px;
+    padding: 25px 30px;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #2c3e50;
-    cursor: pointer;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     display: flex;
     align-items: center;
-    gap: 10px;
-    background: #f8f9fa;
-    border-left: 4px solid #c19a6b;
-    transition: background 0.3s;
-}
-
-.faq-question:hover {
-    background: #f0f7ff;
+    gap: 12px;
+    border-bottom: 1px solid #eaeaea;
+    font-weight: 600;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: default;
+    user-select: text;
 }
 
 .faq-question i {
     color: #c19a6b;
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
+/* 答案部分 - 始终直接显示 */
 .faq-answer {
-    padding: 0 25px;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-    padding: 20px 25px;
-    max-height: 1000px;
+    padding: 25px 30px;
+    display: block;
+    line-height: 1.8;
+    color: #444;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1.05rem;
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
 }
 
 .faq-answer p {
-    color: #555;
-    line-height: 1.7;
     margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+    display: block;
+    overflow: visible;
+    max-height: none;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-answer strong {
+    color: #c19a6b;
+    font-weight: 600;
+}
+
+/* FAQ底部的行动号召 */
 .faq-cta {
     text-align: center;
-    margin-top: 50px;
-    padding: 30px;
+    margin-top: 60px;
+    padding: 40px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 10px;
-    border-left: 4px solid #c19a6b;
+    border-radius: 15px;
+    border-left: 5px solid #c19a6b;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .faq-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
     color: #2c3e50;
+    font-weight: 500;
 }
 
-/* ===== 页脚 ===== */
+.faq-cta .btn-primary {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+}
+
+/* ==================== 页脚 ==================== */
 .footer {
     background-color: #2c3e50;
     color: #ecf0f1;
@@ -733,7 +770,7 @@ h1, h2, h3, h4, .logo {
     color: #c19a6b;
 }
 
-/* ===== 浮动按钮 ===== */
+/* ==================== 浮动按钮 ==================== */
 .float-btn {
     position: fixed;
     bottom: 30px;
@@ -758,7 +795,7 @@ h1, h2, h3, h4, .logo {
     box-shadow: 0 6px 20px rgba(39, 174, 96, 0.6);
 }
 
-/* ===== 响应式设计 ===== */
+/* ==================== 响应式设计 ==================== */
 @media (max-width: 992px) {
     .card {
         grid-template-columns: 1fr;
@@ -837,6 +874,24 @@ h1, h2, h3, h4, .logo {
         min-width: 600px;
     }
     
+    .faq-question {
+        padding: 20px 15px;
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer {
+        padding: 20px 15px;
+        font-size: 1rem;
+    }
+    
+    .faq-cta {
+        padding: 30px 20px;
+    }
+    
+    .faq-cta p {
+        font-size: 1.1rem;
+    }
+    
     .float-btn {
         bottom: 20px;
         right: 20px;
@@ -844,129 +899,31 @@ h1, h2, h3, h4, .logo {
         height: 50px;
         font-size: 1.5rem;
     }
-    /* FAQ样式修改 - 直接显示答案 */
-.faq-container {
-    max-width: 900px;
-    margin: 0 auto;
 }
 
-.faq-item {
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    border-left: 4px solid #c19a6b;
+@media (max-width: 480px) {
+    .trust-bar .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.5rem;
+    }
 }
-
-.faq-question {
-    padding: 20px 25px;
-    margin: 0;
-    font-size: 1.2rem;
-    color: #2c3e50;
-    background: #f8f9fa;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.faq-question i {
-    color: #c19a6b;
-}
-
-/* 重点：让答案直接显示 */
-.faq-answer {
-    padding: 20px 25px;
-    display: block !important; /* 强制显示 */
-    max-height: none !important; /* 移除高度限制 */
-    opacity: 1 !important; /* 完全不透明 */
-    line-height: 1.7;
-    color: #555;
-    background: white;
-}
-
-.faq-answer p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-}
-
-.faq-answer strong {
-    color: #2c3e50;
-}
-
-/* 移除所有交互相关的样式 */
-.faq-question {
-    cursor: default; /* 默认光标，不可点击 */
-    user-select: text; /* 允许选择文字 */
-}
-
-/* 移除悬停效果 */
-.faq-question:hover {
-    background: #f8f9fa; /* 保持原背景色 */
-}
-
-/* 移除箭头图标 */
-.faq-question::after {
-    display: none; /* 不显示箭头 */
-}
-}
-<style>
-/* FAQ强制显示修复 - 最高优先级 */
-.faq-answer {
-    all: unset !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    max-height: none !important;
-    height: auto !important;
-    overflow: visible !important;
-    padding: 25px 30px !important;
-    margin: 0 !important;
-    border: none !important;
-    background: white !important;
-    color: #555 !important;
-    font-size: 1.1rem !important;
-    line-height: 1.8 !important;
-    position: static !important;
-    transform: none !important;
-    transition: none !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    text-overflow: clip !important;
-    box-sizing: border-box !important;
-}
-
-.faq-answer p {
-    all: unset !important;
-    display: block !important;
-    margin: 0 0 15px 0 !important;
-    padding: 0 !important;
-    line-height: 1.8 !important;
-    color: #555 !important;
-    font-size: 1.1rem !important;
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
-}
-
-.faq-answer p:last-child {
-    margin-bottom: 0 !important;
-}
-
-.faq-answer strong {
-    color: #2c3e50 !important;
-    font-weight: 600 !important;
-}
-
-/* 确保容器不限制内容 */
-.faq-item {
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
-}
-
-.faq-container {
-    overflow: visible !important;
-}
-</style>

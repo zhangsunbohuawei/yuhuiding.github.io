@@ -649,3 +649,139 @@ h1, h2, h3, h4, .logo {
         font-size: 1.5rem;
     }
 }
+/* ==================== 对比表格样式 ==================== */
+.comparison-container {
+    margin: 40px auto 60px;
+    max-width: 900px;
+}
+
+.process-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+}
+
+.process-comparison-table th,
+.process-comparison-table td {
+    padding: 18px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.process-comparison-table thead {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.table-header {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 20px 15px !important;
+}
+
+.row-header {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    text-align: left;
+    width: 25%;
+    padding-left: 30px !important;
+    border-right: 2px solid #eef2f7;
+}
+
+.process-comparison-table tbody tr:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.process-comparison-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.process-comparison-table td {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.process-comparison-table .price-cell {
+    font-weight: 700;
+    color: #e74c3c;
+    font-size: 1.1rem;
+}
+
+.process-comparison-table .cell-highlight {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.process-comparison-table .highlight-cell {
+    background-color: #e8f6f3;
+    color: #27ae60;
+    font-weight: 700;
+    position: relative;
+}
+
+.process-comparison-table .highlight-cell::after {
+    content: "✓ 推荐";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.7rem;
+    background: #27ae60;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.comparison-note {
+    background-color: #fff9e6;
+    border-left: 4px solid #f39c12;
+    padding: 15px 20px;
+    margin-top: 25px;
+    border-radius: 0 5px 5px 0;
+    font-size: 0.95rem;
+}
+
+.comparison-note i {
+    color: #f39c12;
+    margin-right: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .process-comparison-table {
+        font-size: 0.9rem;
+    }
+    
+    .process-comparison-table th,
+    .process-comparison-table td {
+        padding: 12px 10px;
+    }
+    
+    .row-header {
+        padding-left: 15px !important;
+        width: 30%;
+    }
+    
+    .process-comparison-table .highlight-cell::after {
+        font-size: 0.6rem;
+        padding: 1px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-comparison-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .process-comparison-table table {
+        min-width: 500px;
+    }
+}

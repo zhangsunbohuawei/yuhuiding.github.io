@@ -844,4 +844,70 @@ h1, h2, h3, h4, .logo {
         height: 50px;
         font-size: 1.5rem;
     }
+    /* FAQ样式修改 - 直接显示答案 */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-left: 4px solid #c19a6b;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.faq-question i {
+    color: #c19a6b;
+}
+
+/* 重点：让答案直接显示 */
+.faq-answer {
+    padding: 20px 25px;
+    display: block !important; /* 强制显示 */
+    max-height: none !important; /* 移除高度限制 */
+    opacity: 1 !important; /* 完全不透明 */
+    line-height: 1.7;
+    color: #555;
+    background: white;
+}
+
+.faq-answer p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.faq-answer strong {
+    color: #2c3e50;
+}
+
+/* 移除所有交互相关的样式 */
+.faq-question {
+    cursor: default; /* 默认光标，不可点击 */
+    user-select: text; /* 允许选择文字 */
+}
+
+/* 移除悬停效果 */
+.faq-question:hover {
+    background: #f8f9fa; /* 保持原背景色 */
+}
+
+/* 移除箭头图标 */
+.faq-question::after {
+    display: none; /* 不显示箭头 */
+}
 }

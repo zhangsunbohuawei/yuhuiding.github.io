@@ -314,7 +314,7 @@ h1, h2, h3, h4, .logo {
     height: auto;     
     display: block;    
     margin: 0 auto;
-    margin-left: 500px;  
+    margin-left: 0px;  
     margin-right: auto;
 }    
 

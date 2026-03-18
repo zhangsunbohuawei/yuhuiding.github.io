@@ -303,8 +303,9 @@ h1, h2, h3, h4, .logo {
 
 /* 左侧图片区域 */
 .company-images {
-    width: 100%; max-width: 1200px;
+    width: 100%; max-width: 1920px;
     height: auto
+    text-align: center;
 }
 
 /* 图片网格 */

@@ -307,7 +307,7 @@ h1, h2, h3, h4, .logo {
     width: 100%; max-width: 600px;
     height: auto; 
     margin: 0 auto; 
-    margin-left: 50px;  
+    margin-left: -500px;  
     margin-right: auto;
 }
 .feiyi img {

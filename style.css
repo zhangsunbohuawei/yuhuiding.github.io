@@ -303,29 +303,17 @@ h1, h2, h3, h4, .logo {
 
 /* 左侧图片区域 */
 .company-images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 100%; max-width: 1200px;
+    height: auto
 }
 
 /* 图片网格 */
-.image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.feiyi {
+    width: 100%; max-width: 600px;
+    height: auto
 }
 
-.grid-item {
-    background: #f8f9fa;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px dashed #eaeaea;
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-}
+
 
 /* 右侧信息区域 */
 .company-info {

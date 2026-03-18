@@ -294,12 +294,6 @@ h1, h2, h3, h4, .logo {
 
 
 /* ==================== 公司介绍 ==================== */
-.company-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-top: 40px;
-}
 
 /* 左侧图片区域 */
 .company-images {

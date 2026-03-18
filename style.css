@@ -307,11 +307,10 @@ h1, h2, h3, h4, .logo {
     width: 100%; max-width: 600px;
     height: auto
 }
-
 feiyi img {
-    width: 50%;      
-    height:auto
-    object-fit: cover;  
+    width: 100%; max-width: 600px;
+    height: auto
+    text-align: center;
 }    
 
 /* 右侧信息区域 */

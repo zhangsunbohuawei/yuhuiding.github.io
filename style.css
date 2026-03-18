@@ -310,7 +310,7 @@ h1, h2, h3, h4, .logo {
 
 /* 图片网格 */
 .feiyi {
-    width: 100%; max-width: 600px;
+    width: 50%; max-width: 600px;
     height: auto
 }
 

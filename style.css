@@ -304,11 +304,15 @@ h1, h2, h3, h4, .logo {
 
 /* 图片网格 */
 .feiyi {
-    width: 50%; max-width: 600px;
+    width: 100%; max-width: 600px;
     height: auto
 }
 
-
+feiyi img {
+    width: 100%;      
+    height: 100%;       
+    object-fit: cover;  
+}    
 
 /* 右侧信息区域 */
 .company-info {

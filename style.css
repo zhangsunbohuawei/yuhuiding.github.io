@@ -314,6 +314,8 @@ h1, h2, h3, h4, .logo {
     height: auto;     
     display: block;    
     margin: 0 auto;
+    margin-left: 100px;  
+    margin-right: auto;
 }    
 
 /* 右侧信息区域 */

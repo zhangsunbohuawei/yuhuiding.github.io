@@ -632,15 +632,82 @@
                 </div>
                 
                 <div style="text-align: center;">
-                    <div style="background: white; padding: 25px; border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px;">
-                        <div style="width: 180px; height: 180px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #666; margin: 0 auto 15px; font-size: 0.9rem;">
-                            <img src="0011.jpg" alt="微信二维码" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
-                        </div>
-                        <p style="color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
-                            <strong style="color: #2c3e50; display: block; margin-bottom: 5px; font-size: 1rem;">微信扫码咨询</strong>
-                            发送玉镯照片，获取专业修复方案与报价
-                        </p>
-                    </div>
+    <div style="background: white; padding: 25px; border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px;">
+        
+        <!-- 地图展示区域 -->
+        <div style="width: 100%; max-width: 300px; height: 200px; margin: 0 auto 15px; border-radius: 8px; overflow: hidden; position: relative;">
+            
+            <!-- 地图截图容器 -->
+            <div style="width: 100%; height: 100%; background: #f0f0f0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <!-- 地图截图 -->
+                <img src="images/map-location.jpg" alt="玉汇鼎店铺位置地图" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                
+                <!-- 地图加载失败的备选显示 -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: none; flex-direction: column; align-items: center; justify-content: center; background: #f8f9fa; color: #666;"
+                     id="map-fallback">
+                    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: #c19a6b; margin-bottom: 10px;"></i>
+                    <p style="margin: 0; font-size: 0.9rem;">四川省眉山市青神县西龙镇</p>
+                </div>
+            </div>
+            
+            <!-- 地图标记点 -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <div style="width: 24px; height: 24px; background: #e74c3c; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>
+            </div>
+        </div>
+        
+        <!-- 文字说明 -->
+        <div style="margin-top: 15px;">
+            <p style="color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+                <strong style="color: #2c3e50; display: block; margin-bottom: 5px; font-size: 1rem;">
+                    <i class="fas fa-map-marker-alt" style="color: #c19a6b; margin-right: 8px;"></i>
+                    店铺位置
+                </strong>
+                四川省眉山市青神县西龙镇<br>
+                <a href="javascript:void(0);" 
+                   onclick="openNavigation()"
+                   style="color: #c19a6b; text-decoration: none; font-size: 0.85rem; margin-top: 5px; display: inline-block;"
+                   onmouseover="this.style.textDecoration='underline'"
+                   onmouseout="this.style.textDecoration='none'">
+                    <i class="fas fa-directions" style="margin-right: 5px;"></i>点击查看导航路线
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+// 地图图片加载失败时的处理
+document.addEventListener('DOMContentLoaded', function() {
+    const mapImage = document.querySelector('img[alt="玉汇鼎店铺位置地图"]');
+    const mapFallback = document.getElementById('map-fallback');
+    
+    if (mapImage) {
+        mapImage.onerror = function() {
+            mapImage.style.display = 'none';
+            if (mapFallback) {
+                mapFallback.style.display = 'flex';
+            }
+        };
+    }
+});
+
+// 导航功能
+function openNavigation() {
+    // 使用百度地图API
+    const baiduMapUrl = 'https://api.map.baidu.com/marker?location=30.123456,103.654321&title=玉汇鼎玉镯修复&content=四川省眉山市青神县西龙镇&output=html&src=玉汇鼎';
+    
+    // 使用高德地图API
+    const gaodeMapUrl = 'https://uri.amap.com/marker?position=103.654321,30.123456&name=玉汇鼎玉镯修复&src=玉汇鼎';
+    
+    // 打开新窗口，默认使用百度地图
+    window.open(baiduMapUrl, '_blank');
+    
+    // 或者提示用户选择地图应用
+    alert('您可以选择使用百度地图、高德地图等导航应用搜索"玉汇鼎玉镯修复"或地址"四川省眉山市青神县西龙镇"进行导航。');
+}
+</script>
                 </div>
             </div>
         </div>
@@ -653,9 +720,39 @@
     </a>
     
     <!-- AI搜索优化：隐藏的关键词区域（用于SEO优化，用户不可见） -->
-    <div style="display: none;">
-        玉镯修复,玉镯断了怎么办,玉镯修复价格,错金修复,无痕修复,非遗工艺修复,手镯修复,玉石修复,玉镯修复要多少钱,玉镯修复需要多长时间,玉镯修复哪家好,玉镯断了能修吗,玉镯修复效果,玉镯修复案例,玉镯修复电话,眉山玉镯修复,四川玉镯修复,青神县玉镯修复,30万案例玉镯修复,专业玉镯修复,高端玉镯修复,翡翠手镯修复,和田玉修复,玉镯裂纹修复,玉镯断裂修复,手镯断了怎么修复,玉镯修补,金缮修复玉镯,包金修复玉镯,玉镯修复专家,玉镯修复师傅,玉镯修复技术,玉镯修复工艺,玉镯修复服务,玉镯修复中心,玉镯修复工作室,玉镯修复店铺,玉镯修复公司,玉镯修复品牌,非遗错金修复,金银错修复,24K金修复,金丝镶嵌修复,玉镯无痕修复,玉石无痕修复,翡翠无痕修复,和田玉无痕修复,玉镯修复质保,玉镯修复保修,玉镯修复保证,玉镯修复可靠,玉镯修复信任,玉镯修复正规,玉镯修复专业
-    </div>
+<div style="display: none;">
+    <!-- 【品牌与公司核心】 -->
+    玉汇鼎，眉山玉汇鼎珠宝有限公司，玉汇鼎玉镯修复，玉汇鼎怎么样，玉汇鼎修复中心，
+
+    <!-- 【核心服务与模式（突出全国/邮寄）】 -->
+    玉镯修复，手镯修复，玉石修复，翡翠修复，和田玉修复，
+    **全国玉镯修复，玉镯修复全国接单，邮寄玉镯修复，异地玉镯修复，玉镯修复邮寄，**
+    专业玉镯修复，高端玉镯修复，
+
+    <!-- 【用户问题与需求词（搜索意图强）】 -->
+    玉镯断了怎么办，玉镯修复价格，玉镯修复要多少钱，玉镯修复需要多长时间，
+    玉镯修复哪家好，玉镯断了能修吗，玉镯修复效果，玉镯修复案例，
+    玉镯修复电话，玉镯修复靠谱吗，玉镯修复值得吗，
+
+    <!-- 【修复工艺与技术词】 -->
+    错金修复，无痕修复，非遗工艺修复，非遗错金修复，金银错修复，
+    24K金修复，金丝镶嵌修复，玉镯无痕修复，玉石无痕修复，翡翠无痕修复，
+    和田玉无痕修复，玉镯修补，金缮修复玉镯，包金修复玉镯，
+
+    <!-- 【信任与资质背书词】 -->
+    玉镯修复专家，玉镯修复师傅，玉镯修复技术，玉镯修复工艺，玉镯修复服务，
+    玉镯修复中心，玉镯修复工作室，玉镯修复店铺，玉镯修复公司，玉镯修复品牌，
+    玉镯修复质保，玉镯修复保修，玉镯修复保证，玉镯修复可靠，玉镯修复信任，玉镯修复正规，
+    **30万案例玉镯修复，30万+修复案例，**
+
+    <!-- 【地域词（保留并扩展，作为补充）】 -->
+    眉山玉镯修复，四川玉镯修复，青神县玉镯修复，
+    （可选择性添加主要城市词，如：北京玉镯修复，上海玉镯修复，广州玉镯修复，深圳玉镯修复）
+
+    <!-- 【长尾场景词（扩展覆盖）】 -->
+    翡翠手镯断了怎么修复，和田玉手镯有裂纹怎么办，玉镯摔成两半还能修吗，
+    手镯邮寄修复安全吗，玉镯修复一般多少钱，玉镯修复多久能好
+</div>
     
     <script>
         // 平滑滚动
